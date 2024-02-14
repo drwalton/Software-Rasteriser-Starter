@@ -1,7 +1,7 @@
 // A practical implementation of the rasterization algorithm in software.
 
 #include "geometry.h"
-#include "SDL.h" 
+#include <SDL.h>
 #include "model.h"
 #include <fstream>
 #include <chrono>
