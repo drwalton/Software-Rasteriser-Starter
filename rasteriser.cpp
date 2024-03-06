@@ -87,12 +87,13 @@ void convertToRaster(
     // define a new Vec3f to store the camera space position of the vertex (vertexCamera)
     // multiple the worldToCamera matrix with the vertexWorld position
     // store the value in vertexCamera
+    // Hint: Check the Matrix44 class in geometry.h and the functions multDirMatrix, multVecMatrix.
+    // Make sure to select the correct one - is this vertex a direction or a position vector?
     
     // TASK 2
     // convert to screen space - your implementation here
     // define a Vec2f to store the vertex screen space position (vertexScreen)
     // calculate x and y components for this position from the vertexCamera variable
-    // Hint: Don't forget to perform the perspective divide (divide by w)!
     
     // TASK 3
     // now convert point from screen space to NDC space (in range [-1,1])
@@ -209,7 +210,7 @@ int main(int argc, char **argv)
         model = new Model(argv[1]);
     }
     else {
-        model = new Model("cc_t.obj");
+        model = new Model("../cc_t.obj");
     }
 
     // initialise SDL2
