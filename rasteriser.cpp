@@ -187,6 +187,10 @@ Matrix44f lookAt(const Vec3f from, const Vec3f to, const Vec3f _tmp = Vec3f(0, 1
 {
     // TASK 5
     // Calculate forward, right and up vectors
+    // Hint: these should be at right angles to one another - when you want to find 
+    // a vector perpendicular to another, think of the cross product!
+    // Extra Hint: try to do this yourself first, but if you're stuck on this task,
+    // check the LookAt implementation in the Lecture 6: Viewing slides.
 
     Matrix44f camToWorld;
 
