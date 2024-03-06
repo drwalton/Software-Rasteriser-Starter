@@ -92,6 +92,7 @@ void convertToRaster(
     // convert to screen space - your implementation here
     // define a Vec2f to store the vertex screen space position (vertexScreen)
     // calculate x and y components for this position from the vertexCamera variable
+    // Hint: Don't forget to perform the perspective divide (divide by w)!
     
     // TASK 3
     // now convert point from screen space to NDC space (in range [-1,1])
