@@ -87,6 +87,8 @@ void convertToRaster(
     // define a new Vec3f to store the camera space position of the vertex (vertexCamera)
     // multiple the worldToCamera matrix with the vertexWorld position
     // store the value in vertexCamera
+    // Hint: Check the Matrix44 class in geometry.h and the functions multDirMatrix, multVecMatrix.
+    // Make sure to select the correct one - is this vertex a direction or a position vector?
     
     // TASK 2
     // convert to screen space - your implementation here
@@ -187,6 +189,10 @@ Matrix44f lookAt(const Vec3f from, const Vec3f to, const Vec3f _tmp = Vec3f(0, 1
 {
     // TASK 5
     // Calculate forward, right and up vectors
+    // Hint: these should be at right angles to one another - when you want to find 
+    // a vector perpendicular to another, think of the cross product!
+    // Extra Hint: try to do this yourself first, but if you're stuck on this task,
+    // check the LookAt implementation in the Lecture 6: Viewing slides.
 
     Matrix44f camToWorld;
 
@@ -204,7 +210,7 @@ int main(int argc, char **argv)
         model = new Model(argv[1]);
     }
     else {
-        model = new Model("cc_t.obj");
+        model = new Model("../cc_t.obj");
     }
 
     // initialise SDL2
