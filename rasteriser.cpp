@@ -191,12 +191,14 @@ Matrix44f lookAt(const Vec3f from, const Vec3f to, const Vec3f _tmp = Vec3f(0, 1
     // Calculate forward, right and up vectors
     // Hint: these should be at right angles to one another - when you want to find 
     // a vector perpendicular to another, think of the cross product!
-    // Extra Hint: try to do this yourself first, but if you're stuck on this task,
-    // check the LookAt implementation in the Lecture 6: Viewing slides.
 
     Matrix44f camToWorld;
 
     // Set the values of the camToWorld matrix
+    // Hint: Think about this. Remember this is the worldToCam matrix, not the cameraToWorld.
+    // Do you want to translate or rotate first?
+    // Check out the geometry.h file and see if the matrix multiplication is on the left 
+    // or on the right.
 
     return camToWorld;
 }
@@ -257,18 +259,22 @@ int main(int argc, char **argv)
         // have an image of the model rasterised and displayed to the SDL_Window. 
         // You now need to create a system for a camera matrix to be constructed. The easiest way of doing this is by the 
         // lookAt() method described in the lecture notes for the Viewing Transformation series. 
-        // A stub of this method is within this code and guidance on implementing it is here:
-        // https://www.scratchapixel.com/lessons/mathematics-physics-for-computer-graphics/lookat-function
         // For eye, target and up Vec3's you should be able to return a cameraToWorld matrix to invert for a worldToCamera matrix:
         // Vec3f eye(0.f, 1.f, 3.f);
         // Vec3f target(0.f, 0.0f, 0.f);
         // Vec3f up(0.f, 1.f, 0.f);
         // worldToCamera = lookAt(eye, target, up).inverse();
         // now implement the lookAt() method!
+        // This may be the toughest bit of the lab today. Some more hints:
+        // * Draw things out on pencil and paper
+        // * If things aren't working, use a minimal test case. Pick eye and target locations where you know what the matrix should be
+        // and check it's correct.
+        // * Ask me for help :) 
 
         // TASK 6 
         // Implement the Arcball Camera to replace Vec3f eye(0.f, 1.f, 3.f); with Vec3f eye(camX, camY, camZ); computed each frame
         // for increments of camAngleX, starting at 0.0f and resetting after incrementing past 360 degrees. 
+        // Tip: If you set x=sin(theta) and y=cos(theta) and vary theta, you'll trace out a circular path.
 
         // Outer loop - For every face in the model (would eventually need to be amended to be for every face in every model)
         for (uint32_t i = 0; i < model->nfaces(); ++i) {
